@@ -19,7 +19,7 @@ const NewsView = ({ stories }) => {
 
   return (
     <section>
-      <h1>Articles</h1>
+      <h1>Articles {storyCards.length}</h1>
       {storyCards}
     </section>
   )
