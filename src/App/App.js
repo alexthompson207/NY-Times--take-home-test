@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import NewsView from '../NewsView/NewsView';
 import { getAllStories } from '../apiCalls';
+import { cleanStoriesData } from '../utilities';
 
 const App = () => {
 
@@ -12,7 +13,8 @@ const App = () => {
     getAllStories()
       .then(response => {
         if (response.status === 'OK') {
-          setStories(response.results)
+          setStories(cleanStoriesData(response))
+          setError('')
         } else {
           setError('fetch error')
         }

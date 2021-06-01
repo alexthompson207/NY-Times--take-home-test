@@ -3,7 +3,7 @@ export const cleanStoriesData = (stories) => {
     return {
       id: i,
       title: story.title,
-      section,
+      section: story.section,
       author: story.byline,
       publishedDate: story.published_date,
       overview: story.abstract,
