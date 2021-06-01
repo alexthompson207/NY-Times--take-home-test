@@ -13,6 +13,7 @@ const NewsView = ({ stories }) => {
         published={story.publishedDate}
         photo={story.photo}
         alt={story.photoAlt}
+        section={story.section}
       />
     )
   })

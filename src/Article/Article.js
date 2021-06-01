@@ -1,7 +1,7 @@
 import React from 'react';
 import './Article.css';
 
-const Article = ({ id, title, author, published, photo, alt }) => {
+const Article = ({ id, title, author, published, photo, alt, section }) => {
 
   return (
     <section className='article-card' id={id}>
@@ -9,7 +9,10 @@ const Article = ({ id, title, author, published, photo, alt }) => {
       <div className='article-text-box'>
         <h2 className='article-title'>{title}</h2>
         <p className='article-author'>{author}</p>
-        <p className='article-date'>{published}</p>
+        <div className='article-details'>
+          <p className='article-section'>{section.toUpperCase()}</p>
+          <p className='article-date'>{published}</p>
+        </div>
       </div>
     </section>
   )

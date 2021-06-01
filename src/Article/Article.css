@@ -30,6 +30,7 @@
   font-size: 30px;
   text-align: left;
 }
-.article-date {
-  text-align: right;
+.article-details {
+  display: flex;
+  justify-content: space-between;
 }
