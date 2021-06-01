@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="App">
       hi
-      <NewsView />
+      <NewsView stories={stories} />
     </div>
   );
 }

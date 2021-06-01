@@ -1,19 +1,27 @@
 import React from 'react';
 import Article from '../Article/Article';
 import './NewsView.css';
-import Story from '../Article/Article';
 
 const NewsView = ({ stories }) => {
 
-  // const storyCards = stories.map(story => {
-  //   return (
-  //     <Article
-  //     />
-  //   )
-  // })
+  const storyCards = stories.map(story => {
+    return (
+      <Article
+        key={story.id}
+        title={story.title}
+        author={story.author}
+        published={story.publishedDate}
+        photo={story.photo}
+        alt={story.photoAlt}
+      />
+    )
+  })
 
   return (
-    <h1>Articles</h1>
+    <section>
+      <h1>Articles</h1>
+      {storyCards}
+    </section>
   )
 }
 

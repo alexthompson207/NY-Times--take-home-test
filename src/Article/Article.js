@@ -1,15 +1,15 @@
 import React from 'react';
 import './Article.css';
 
-const Article = () => {
+const Article = ({ id, title, author, published, photo, alt }) => {
 
   return (
-    <section className='article-card'>
-      <img className='article-img' alt='' src='' />
+    <section className='article-card' id={id}>
+      <img className='article-img' alt={alt} src={photo} />
       <div className='article-text-box'>
-        <h2>title</h2>
-        <p>author</p>
-        <p>data</p>
+        <h2>{title}</h2>
+        <p>{author}</p>
+        <p>{published}</p>
       </div>
     </section>
   )
