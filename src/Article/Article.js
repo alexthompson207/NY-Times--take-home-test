@@ -7,9 +7,9 @@ const Article = ({ id, title, author, published, photo, alt }) => {
     <section className='article-card' id={id}>
       <img className='article-img' alt={alt} src={photo} />
       <div className='article-text-box'>
-        <h2>{title}</h2>
-        <p>{author}</p>
-        <p>{published}</p>
+        <h2 className='article-title'>{title}</h2>
+        <p className='article-author'>{author}</p>
+        <p className='article-date'>{published}</p>
       </div>
     </section>
   )

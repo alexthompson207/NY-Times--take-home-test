@@ -13,8 +13,8 @@ export const cleanStoriesData = (stories) => {
       publishedDate: formatDate(story.published_date),
       overview: story.abstract,
       link: story.url,
-      photo: story.multimedia[0].url,
-      photoAlt: story.multimedia[0].caption,
+      photo: story.multimedia[3].url,
+      photoAlt: story.multimedia[3].caption,
     }
   })
 }
