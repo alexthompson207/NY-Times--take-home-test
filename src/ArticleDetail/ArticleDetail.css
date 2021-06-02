@@ -1,0 +1,46 @@
+.article-details-view {
+  display: flex;
+  flex-direction: column;
+  margin: 4%;
+  background-color: #f9f7f7;
+  padding: 2%;
+  border-radius: 20px;
+}
+
+.back-btn {
+  display: flex;
+  margin: 10px 0 0 40px;
+  border: 2px solid #112d4e;
+  background-color: #f9f7f7;
+  color: black;
+  border-radius: 15px;
+  width: 10%;
+  justify-content: center;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  border-color: #3f72af;
+  color: #3f72af;
+}
+
+.details-img {
+  width: 50%;
+  align-self: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.details-overview {
+  width: 80%;
+  align-self: center;
+  font-style: italic;
+}
+
+.details-detail {
+  display: flex;
+  justify-content: space-between;
+}
