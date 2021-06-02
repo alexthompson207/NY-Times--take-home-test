@@ -20,7 +20,7 @@ const NewsView = ({ stories }) => {
 
   return (
     <section className='news-view'>
-      <h1>Articles {storyCards.length}</h1>
+      <h1>All Top Articles: {storyCards.length}</h1>
       {storyCards}
     </section>
   )
