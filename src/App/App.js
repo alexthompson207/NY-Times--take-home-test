@@ -61,12 +61,13 @@ const App = () => {
           )
         }}
         />
-        <Route exact path='/:title' render={({ match }) => {
+        <Route exact path='/:alt' render={({ match }) => {
           const currentStory = stories.find(story => {
-            return story.title === match.params.title
+            return story.photoAlt === match.params.alt
           });
           return (
             <>
+              {!currentStory && <h2>Loading...</h2>}
               {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
             </>
           )
