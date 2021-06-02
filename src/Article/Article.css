@@ -19,11 +19,15 @@
 
 .article-text-box {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .article-img {
   width: 30%;
   border-radius: 10px;
+  max-height: 250px;
 }
 
 .article-title {
