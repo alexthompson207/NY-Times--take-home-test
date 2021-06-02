@@ -35,24 +35,27 @@ const App = () => {
   const searchArticles = (event) => {
     const search = event.target.value;
     if (search === 'all') {
-      setFilteredArticles(stories)
-      setSearch(true)
+      setFilteredArticles(stories);
+      setSearch(true);
     } else {
       const filteredSearch = stories.filter(story => story.section === search);
-      setFilteredArticles(filteredSearch)
-      setSearch(true)
+      setFilteredArticles(filteredSearch);
+      setSearch(true);
     }
+  }
 
+  const resetFilter = () => {
+    setSearch(false);
   }
 
   return (
     <div className="App">
       <Header />
-      <Filter search={searchArticles} />
       <Switch>
         <Route exact path='/' render={() => {
           return (
             <>
+              <Filter search={searchArticles} />
               <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
             </>
           )
@@ -60,13 +63,11 @@ const App = () => {
         />
         <Route exact path='/:title' render={({ match }) => {
           const currentStory = stories.find(story => {
-            console.log(story.id.toString())
             return story.title === match.params.title
           });
-          console.log((match))
           return (
             <>
-              {currentStory && <ArticleDetail currentStory={currentStory} />}
+              {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
             </>
           )
         }}

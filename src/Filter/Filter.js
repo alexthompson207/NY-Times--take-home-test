@@ -5,8 +5,8 @@ const Filter = ({ search }) => {
   const [value, setValue] = useState('all')
 
   const handleChange = event => {
-    setValue(event.target.value)
-    search(event)
+    setValue(event.target.value);
+    search(event);
   }
 
   return (

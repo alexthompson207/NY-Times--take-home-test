@@ -2,13 +2,13 @@ import './ArticleDetail.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ArticleDetail = ({ currentStory }) => {
+const ArticleDetail = ({ currentStory, reset }) => {
 
   const { title, photo, photoAlt, overview, author, link, section, publishedDate } = currentStory;
 
   return (
     <>
-      <Link className='back-btn' to='/'>Back</Link>
+      <Link className='back-btn' to='/' onClick={reset()}>Back</Link>
       <section className='article-details-view'>
         <h1 className='details-title'>{title}</h1>
         <img className='details-img' src={photo} alt={photoAlt}></img>
