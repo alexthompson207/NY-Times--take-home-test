@@ -1,5 +1,6 @@
 import './ArticleDetail.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ArticleDetail = ({ currentStory }) => {
 
@@ -7,6 +8,7 @@ const ArticleDetail = ({ currentStory }) => {
 
   return (
     <section className='article-details-view'>
+      <Link to='/'>Back</Link>
       <h1 className='details-title'>{title}</h1>
       <img className='details-img' src={photo} alt={photoAlt}></img>
       <h2 className='details-overview'>{overview}</h2>
