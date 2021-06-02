@@ -12,7 +12,7 @@ const Filter = ({ search }) => {
   return (
     <>
       <label htmlFor='filter'> Filter by Section:</label>
-      <select name='filter' value={value} onChange={event => handleChange(event)} id='filter' >
+      <select className='filter-select' name='filter' value={value} onChange={event => handleChange(event)} id='filter' >
         <option value='all'>all</option>
         <option value='arts'>arts</option>
         <option value='automobiles'>automobiles</option>
