@@ -13,6 +13,7 @@ const App = () => {
   const [stories, setStories] = useState([]);
   const [error, setError] = useState('');
   const [filteredArticles, setFilteredArticles] = useState([]);
+  const [search, setSearch] = useState(false)
 
   useEffect(() => {
     getAllStories()
@@ -33,8 +34,15 @@ const App = () => {
 
   const searchArticles = (event) => {
     const search = event.target.value;
-    const filteredSearch = stories.filter(story => story.section === search);
-    setFilteredArticles(filteredSearch)
+    if (search === 'all') {
+      setFilteredArticles(stories)
+      setSearch(true)
+    } else {
+      const filteredSearch = stories.filter(story => story.section === search);
+      setFilteredArticles(filteredSearch)
+      setSearch(true)
+    }
+
   }
 
   return (
@@ -45,7 +53,7 @@ const App = () => {
         <Route exact path='/' render={() => {
           return (
             <>
-              <NewsView stories={stories} filteredStories={filteredArticles} />
+              <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
             </>
           )
         }}
