@@ -12,6 +12,7 @@ const App = () => {
 
   const [stories, setStories] = useState([]);
   const [error, setError] = useState('');
+  const [filteredArticles, setFilteredArticles] = useState([]);
 
   useEffect(() => {
     getAllStories()
@@ -30,10 +31,16 @@ const App = () => {
 
   }, []);
 
+  const searchArticles = (event) => {
+    const search = event.target.value;
+    const filteredSearch = stories.filter(story => story.section === search);
+    setFilteredArticles(filteredSearch)
+  }
+
   return (
     <div className="App">
       <Header />
-      <Filter />
+      <Filter search={searchArticles} />
       <Switch>
         <Route exact path='/' render={() => {
           return (

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Filter.css';
 
-const Filter = () => {
+const Filter = ({ search }) => {
   const [value, setValue] = useState('all')
 
   const handleChange = event => {
     setValue(event.target.value)
+    search(event)
   }
 
   return (
     <>
-      <label for='filter'> Filter by Section:</label>
+      <label htmlFor='filter'> Filter by Section:</label>
       <select name='filter' value={value} onChange={event => handleChange(event)} id='filter' >
         <option value='all'>all</option>
         <option value='arts'>arts</option>
