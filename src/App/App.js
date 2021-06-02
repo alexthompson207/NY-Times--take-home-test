@@ -37,8 +37,12 @@ const App = () => {
           )
         }}
         />
-        <Route exact path='/:id' render={() => {
-          const currentStory = stories.filter(story => story.id === matchMedia.params.publishedDate);
+        <Route exact path='/:title' render={({ match }) => {
+          const currentStory = stories.find(story => {
+            console.log(story.id.toString())
+            return story.title === match.params.title
+          });
+          console.log((match))
           return (
             <>
               {currentStory && <ArticleDetail currentStory={currentStory} />}
