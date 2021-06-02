@@ -2,9 +2,15 @@ import React from 'react';
 import Article from '../Article/Article';
 import './NewsView.css';
 
-const NewsView = ({ stories }) => {
+const NewsView = ({ stories, filteredStories }) => {
 
-  const storyCards = stories.map(story => {
+  let storiesToDisplay = filteredStories;
+
+  if (!filteredStories.length) {
+    storiesToDisplay = stories
+  }
+
+  const storyCards = storiesToDisplay.map(story => {
     return (
       <Article
         key={story.id}

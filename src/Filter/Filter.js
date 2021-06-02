@@ -21,7 +21,7 @@ const Filter = ({ search }) => {
         <option value='fashion'>fashion</option>
         <option value='food'>food</option>
         <option value='health'>health</option>
-        <option value='home'>home</option>
+        {/* <option value='home'>home</option> */}
         <option value='insider'>insider</option>
         <option value='magazine'>magazine</option>
         <option value='movies'>movies</option>

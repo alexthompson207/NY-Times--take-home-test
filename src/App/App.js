@@ -45,7 +45,7 @@ const App = () => {
         <Route exact path='/' render={() => {
           return (
             <>
-              <NewsView stories={stories} />
+              <NewsView stories={stories} filteredStories={filteredArticles} />
             </>
           )
         }}
