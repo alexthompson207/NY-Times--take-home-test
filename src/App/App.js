@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import ArticleDetail from '../ArticleDetail/ArticleDetail';
 import Header from '../Header/Header';
 import Filter from '../Filter/Filter';
+import Error from '../Error/Error';
 
 const App = () => {
 
@@ -51,6 +52,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      {error && <Error error='Oops, something went wrong' />}
       <main>
         <Switch>
           <Route exact path='/' render={() => {
