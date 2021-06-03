@@ -1,8 +1,8 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import NewsView from '../NewsView/NewsView';
-import { getAllStories } from '../apiCalls';
-import { cleanStoriesData } from '../utilities';
+import { getAllStories } from '../../apiCalls';
+import { cleanStoriesData } from '../../utilities';
 import { Route, Switch } from 'react-router-dom';
 import ArticleDetail from '../ArticleDetail/ArticleDetail';
 import Header from '../Header/Header';
