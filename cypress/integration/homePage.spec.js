@@ -12,9 +12,9 @@ describe('Home View Features', () => {
     cy.get('.header-details').contains('Pulling top articles from the New York Times')
   });
 
-  // it('should have a loading message before articles are displayed', () => {
-  //   cy.get('h2').contains('Loading...')
-  // });
+  it('should have a loading message before articles are displayed', () => {
+    cy.get('h2').contains('Loading...')
+  });
 
   it('should not have a home button displayed when on home view', () => {
     cy.get('main').contains('Home').should('not.exist')
@@ -36,12 +36,13 @@ describe('Home View Features', () => {
     cy.get('.article-card').eq(1).children('img').should('have.class', 'article-img')
   });
 
-  // it('should display to the user the number of articles of the page', () => {
-  //   cy.get('.news-results').contains('3');
-  // });
+  it('should display to the user the number of articles of the page', () => {
+    cy.get('.news-results').contains('3');
+  });
 
   it('should display a filter dropdown menu', () => {
     cy.get('label').contains('Filter by Section');
+    cy.get('.filter-select option').should('have.length', 26);
   });
 
   it('should be able to click on an article and the url will update', () => {
@@ -51,14 +52,13 @@ describe('Home View Features', () => {
 
   it('should be able to click on a different article and the url will update', () => {
     cy.get('.article-card').eq(1).click()
-    cy.url().should('include', '')
+    cy.url().should('include', 'http://localhost:3000/1')
   });
 
   it('should display an article title after clicking on an article', () => {
     cy.url().should('eq', 'http://localhost:3000/');
     cy.get('.article-card').eq(1).click()
     cy.get('h1').contains('The U.S. Has a New Climate Goal. How Does It Stack Up Globally?')
-    cy.url().should('eq', '');
+    cy.url().should('eq', 'http://localhost:3000/1');
   });
-
 })
