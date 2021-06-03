@@ -1,4 +1,4 @@
-describe.only('Single Article View Features', () => {
+describe('Single Article View Features', () => {
 
   beforeEach(() => {
     cy.fixture('storyData').then(stories => {
@@ -47,5 +47,35 @@ describe.only('Single Article View Features', () => {
     cy.get('.back-btn').click();
     cy.url().should('eq', 'http://localhost:3000/');
     cy.get('.news-view a').should('have.length', 3);
+  });
+});
+
+describe('Single Article View Server-Side Error', () => {
+
+  beforeEach(() => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=NyU9tPGJBvDz5j0PEOAANPDOu9XMKitt', {
+      statusCode: 404
+    })
+
+    cy.visit('http://localhost:3000/0');
+  });
+
+  it('should display an error message when the server is down', () => {
+    cy.get('.error-view').contains('Oops, something went wrong')
+  });
+});
+
+describe('Single Article View Client-Side Error', () => {
+
+  beforeEach(() => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=NyU9tPGJBvDz5j0PEOAANPDOu9XMKitt', {
+      statusCode: 500
+    })
+
+    cy.visit('http://localhost:3000/0');
+  });
+
+  it('should display an error message when the server is down', () => {
+    cy.get('.error-view').contains('Oops, something went wrong')
   });
 });

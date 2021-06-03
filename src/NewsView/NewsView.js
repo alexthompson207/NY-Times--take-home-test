@@ -29,9 +29,9 @@ const NewsView = ({ stories, filteredStories, search }) => {
   })
 
   return (
+
     <section className='news-view'>
       <h1 className='news-results'>Articles: {storyCards.length}</h1>
-      {!stories.length && <h2>Loading...</h2>}
       {storyCards}
     </section>
   )
