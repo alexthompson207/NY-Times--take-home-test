@@ -7,7 +7,7 @@ describe('Home View Features', () => {
     cy.visit('http://localhost:3000/');
   });
 
-  it('should have a title and description', () => {
+  it('should have a title and description in the header', () => {
     cy.get('h1').contains('NYT News Reader')
     cy.get('.header-details').contains('Pulling top articles from the New York Times')
   });
