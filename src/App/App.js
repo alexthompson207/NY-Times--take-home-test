@@ -53,33 +53,35 @@ const App = () => {
     <div className="App">
       <Header />
       {error && <Error error='Oops, something went wrong' />}
-      <main>
-        <Switch>
-          <Route exact path='/' render={() => {
-            return (
-              <>
-                <Filter search={searchArticles} />
-                <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
-              </>
-            )
-          }}
-          />
-          <Route exact path='/:id' render={({ match }) => {
-            console.log(match.params)
-            const currentStory = stories.find(story => {
-              return story.id.toString() === match.params.id
-            });
-            console.log(currentStory)
-            return (
-              <>
-                {!currentStory && <h2>Loading...</h2>}
-                {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
-              </>
-            )
-          }}
-          />
-        </Switch>
-      </main>
+      {!error &&
+        <main>
+          <Switch>
+            <Route exact path='/' render={() => {
+              return (
+                <>
+                  <Filter search={searchArticles} />
+                  <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
+                </>
+              )
+            }}
+            />
+            <Route exact path='/:id' render={({ match }) => {
+              console.log(match.params)
+              const currentStory = stories.find(story => {
+                return story.id.toString() === match.params.id
+              });
+              console.log(currentStory)
+              return (
+                <>
+                  {!currentStory && <h2>Loading...</h2>}
+                  {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
+                </>
+              )
+            }}
+            />
+          </Switch>
+        </main>
+      }
     </div>
   );
 }
