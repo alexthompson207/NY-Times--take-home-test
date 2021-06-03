@@ -80,33 +80,20 @@ describe.only('Home View Filter Articles', () => {
     cy.get('.news-results').contains('1');
   });
 
-  // it('should only display articles whose titles match the search input ', () => {
-  //   cy.get('.news-results').contains('3');
-  //   cy.get('.news-view a').should('have.length', 3)
+  it('should display an error message if no articles match search criteria', () => {
+    cy.get('label').contains('Filter by Section');
+    cy.get('.news-results').contains('3');
+    cy.get('.filter-select option').should('have.length', 26);
+    cy.get('.filter-select').select('food').should('have.value', 'food');
+    cy.get('.news-results').should('not.exist');
+    cy.get('.no-match-message').contains('No articles match that section, please try again')
+  });
 
-  //   cy.get('input[name="search"]')
-  //     .type('Globally')
-  //     .should('have.value', 'Globally')
-
-  //   cy.get('.news-results').contains('1');
-  //   cy.get('.news-view a').should('have.length', 1)
-  //   cy.get('.news-view').contains('The U.S. Has a New Climate Goal. How Does It Stack Up Globally?');
-  // });
-
-  // it('should display an error message if no articles match search criteria', () => {
-  //   cy.get('input[name="search"]')
-  //     .type('Nothing')
-
-  //   cy.get('.news-view a').should('have.length', 0)
-  //   cy.get('h1').contains('No articles match your search, please try again!')
-  // });
-
-  // it('should be able to clear search and see all articles', () => {
-  //   cy.get('input[name="search"]')
-  //     .type('Nothing')
-
-  //   cy.get('.news-view a').should('have.length', 0)
-  //   cy.get('input[name="search"]').clear()
-  //   cy.get('.news-view a').should('have.length', 3)
-  // });
+  it('should be able to filter search and then select all articles again', () => {
+    cy.get('.news-results').contains('3');
+    cy.get('.filter-select').select('arts').should('have.value', 'arts');
+    cy.get('.news-results').contains('1');
+    cy.get('.filter-select').select('all').should('have.value', 'all');
+    cy.get('.news-results').contains('3');
+  });
 })

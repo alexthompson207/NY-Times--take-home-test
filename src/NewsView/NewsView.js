@@ -10,7 +10,7 @@ const NewsView = ({ stories, filteredStories, search }) => {
     storiesToDisplay = filteredStories
   }
   else if (!filteredStories.length && search) {
-    return (<h1>No articles match that section, please try again</h1>)
+    return (<h1 className='no-match-message'>No articles match that section, please try again</h1>)
   }
 
   const storyCards = storiesToDisplay.map(story => {

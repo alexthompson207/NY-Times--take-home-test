@@ -4,3 +4,7 @@
   align-items: center;
   margin-top: 15px;
 }
+
+.no-match-message {
+  margin-top: 10px;
+}
