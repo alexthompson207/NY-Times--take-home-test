@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+<h1 align="left">New York Times News Reader</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://github.com/alexthompson207/NY-Times--take-home-test">
+    <img src="https://avatars.githubusercontent.com/u/221409?s=280&v=4" alt="New York Times Logo" width="100" height='100'>
+  </a>
+    <p align="center">
+    <br />
+    <a href="https://github.com/alexthompson207/NY-Times--take-home-tes"><strong>Explore the app »</strong></a>
+    <br />
+    <br />
+    </p>
+  </p>
 
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+* [About the Project](#about-the-project)
+* [Installation](#installation)
+* [Planning](#planning)
+* [Next Steps](#next-steps)
+* [Technologies Used](#technologies-used)
+* [Contributors](#contributors)
+* [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  
+## About the Project
 
-### `npm test`
+New York Times News Reader is an application that sources the top NYT articles from the New York Times Developer Network [(view documentation)](https://developer.nytimes.com/). Users are able to browse and filter all top NYT articles, click on a specific article to learn more, and can be redirected to that article on the New York Times website. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://github.com/turingschool-examples/mod4-tech-challenges/blob/main/take-homes/take-home-rubric.md).
+  
+  
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Fork this [repository](https://github.com/alexthompson207/NY-Times--take-home-test).
+2. Clone it down to your local machine with `git clone <your SSH Key>`.
+3. Navigate into this directory with `cd current-climate`.
+4. Run `npm install` to compile the React application.
+5. Run `npm start` to see the app running locally.
+6. Run `<your text editor> .` to see the code in your text editor.
+7. Run `npm run cypress` to open Cypress and see all the tests.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Planning
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  #### Project Board
+   View the [project board](https://github.com/alexthompson207/NY-Times--take-home-test/projects/1) to see User Stories, design inspirations, and other documentation.
+  
+  #### WireFrame
+  ![take-home1](https://user-images.githubusercontent.com/71950194/120673726-aafbf980-c450-11eb-85df-b8c5b8c7e39a.png)
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Next Steps
+- Implement more advanced styling, such as menu drop down, and color scheme.
+- Add error handling to the UI for fetch requests.
+- Implement robust testing using `Cypress`
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+ <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+ <img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+ <img alt="React Router" src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
+ <img alt="React Hooks" src="https://img.shields.io/badge/React Hooks-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+</p>
+<p align="center">
+ <img alt="Cypress" src="https://img.shields.io/badge/cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white">
+ <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white">
+ <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+ <img alt="Webpack" src="https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributors
+* [Alex Thompson](https://github.com/alexthompson207) - Application Creator
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[<img src="https://img.shields.io/badge/LinkedIn-alex--thompson-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin]
+[<img src="https://img.shields.io/badge/Github-AlexThompson207-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github]
 
-### Code Splitting
+<!-- Personal Definitions  -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[linkedin]: https://www.linkedin.com/in/alex-thompson-he-him/
+[github]: https://github.com/alexthompson207
