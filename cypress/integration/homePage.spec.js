@@ -62,3 +62,51 @@ describe('Home View Features', () => {
     cy.url().should('eq', 'http://localhost:3000/1');
   });
 })
+
+describe.only('Home View Filter Articles', () => {
+
+  beforeEach(() => {
+    cy.fixture('storyData').then(stories => {
+      cy.intercept('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=NyU9tPGJBvDz5j0PEOAANPDOu9XMKitt', stories)
+    })
+    cy.visit('http://localhost:3000/');
+  });
+
+  it('should allow users to select an article section from dropdown menu', () => {
+    cy.get('label').contains('Filter by Section');
+    cy.get('.news-results').contains('3');
+    cy.get('.filter-select option').should('have.length', 26);
+    cy.get('.filter-select').select('arts').should('have.value', 'arts');
+    cy.get('.news-results').contains('1');
+  });
+
+  // it('should only display articles whose titles match the search input ', () => {
+  //   cy.get('.news-results').contains('3');
+  //   cy.get('.news-view a').should('have.length', 3)
+
+  //   cy.get('input[name="search"]')
+  //     .type('Globally')
+  //     .should('have.value', 'Globally')
+
+  //   cy.get('.news-results').contains('1');
+  //   cy.get('.news-view a').should('have.length', 1)
+  //   cy.get('.news-view').contains('The U.S. Has a New Climate Goal. How Does It Stack Up Globally?');
+  // });
+
+  // it('should display an error message if no articles match search criteria', () => {
+  //   cy.get('input[name="search"]')
+  //     .type('Nothing')
+
+  //   cy.get('.news-view a').should('have.length', 0)
+  //   cy.get('h1').contains('No articles match your search, please try again!')
+  // });
+
+  // it('should be able to clear search and see all articles', () => {
+  //   cy.get('input[name="search"]')
+  //     .type('Nothing')
+
+  //   cy.get('.news-view a').should('have.length', 0)
+  //   cy.get('input[name="search"]').clear()
+  //   cy.get('.news-view a').should('have.length', 3)
+  // });
+})
