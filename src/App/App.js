@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import ArticleDetail from '../ArticleDetail/ArticleDetail';
 import Header from '../Header/Header';
 import Filter from '../Filter/Filter';
+import Error from '../Error/Error';
 
 const App = () => {
 
@@ -51,29 +52,34 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Switch>
-        <Route exact path='/' render={() => {
-          return (
-            <>
-              <Filter search={searchArticles} />
-              <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
-            </>
-          )
-        }}
-        />
-        <Route exact path='/:alt' render={({ match }) => {
-          const currentStory = stories.find(story => {
-            return story.photoAlt === match.params.alt
-          });
-          return (
-            <>
-              {!currentStory && <h2>Loading...</h2>}
-              {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
-            </>
-          )
-        }}
-        />
-      </Switch>
+      {error && <Error error='Oops, something went wrong' />}
+      {!error &&
+        <main>
+          <Switch>
+            <Route exact path='/' render={() => {
+              return (
+                <>
+                  <Filter search={searchArticles} />
+                  <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
+                </>
+              )
+            }}
+            />
+            <Route exact path='/:id' render={({ match }) => {
+              const currentStory = stories.find(story => {
+                return story.id.toString() === match.params.id
+              });
+              return (
+                <>
+                  {!currentStory && <h2>Loading...</h2>}
+                  {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
+                </>
+              )
+            }}
+            />
+          </Switch>
+        </main>
+      }
     </div>
   );
 }

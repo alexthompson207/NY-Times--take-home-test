@@ -8,7 +8,7 @@ const ArticleDetail = ({ currentStory, reset }) => {
 
   return (
     <>
-      <Link className='back-btn' to='/' onClick={reset()}>Back</Link>
+      <Link className='back-btn' to='/' onClick={reset}>Back</Link>
       <section className='article-details-view'>
         <h1 className='details-title'>{title}</h1>
         <img className='details-img' src={photo} alt={photoAlt}></img>

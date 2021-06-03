@@ -2,7 +2,7 @@ import React from 'react';
 import Article from '../Article/Article';
 import './NewsView.css';
 
-const NewsView = ({ stories, filteredStories, search }) => {
+const NewsView = ({ stories, filteredStories, search, error }) => {
 
   let storiesToDisplay = stories;
 
@@ -10,7 +10,7 @@ const NewsView = ({ stories, filteredStories, search }) => {
     storiesToDisplay = filteredStories
   }
   else if (!filteredStories.length && search) {
-    return (<h1>No articles match that section, please try again</h1>)
+    return (<h1 className='no-match-message'>No articles match that section, please try again</h1>)
   }
 
   const storyCards = storiesToDisplay.map(story => {
@@ -23,15 +23,19 @@ const NewsView = ({ stories, filteredStories, search }) => {
         photo={story.photo}
         alt={story.photoAlt}
         section={story.section}
+        id={story.id}
       />
     )
   })
 
   return (
+
     <section className='news-view'>
-      <h1>Articles: {storyCards.length}</h1>
+
+      <h1 className='news-results'>Articles: {storyCards.length}</h1>
       {!stories.length && <h2>Loading...</h2>}
       {storyCards}
+
     </section>
   )
 }
