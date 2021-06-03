@@ -44,16 +44,16 @@ New York Times News Reader is an application that sources the top NYT articles f
 ## Planning
 
   #### Project Board
-   View the [project board](https://github.com/alexthompson207/NY-Times--take-home-test/projects/1) to see User Stories, design inspirations, and other documentation.
+   View the [project board](https://github.com/alexthompson207/NY-Times--take-home-test/projects/1) to see User Stories, User Persona, design inspirations, and other documentation.
   
   #### WireFrame
   ![take-home1](https://user-images.githubusercontent.com/71950194/120673726-aafbf980-c450-11eb-85df-b8c5b8c7e39a.png)
   
 
 ## Next Steps
-- Implement more advanced styling, such as menu drop down, and color scheme.
-- Add error handling to the UI for fetch requests.
-- Implement robust testing using `Cypress`
+- Implement more advanced styling, such as changing dropdown menu to buttons in mobile view.
+- Add dynamic scrolling for better performance, render images when user scrolls to them.
+- Implement robust unit testing using `Mocha` and `Chai`.
 
 
 ## Technologies Used
