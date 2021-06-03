@@ -43,3 +43,10 @@ label {
   color: #222; 
   outline: none;
 }
+
+@media only screen and (max-width: 650px) {
+  .filter-select {
+    flex-direction: column;
+    width: 80%;
+  }
+}

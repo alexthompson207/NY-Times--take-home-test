@@ -45,4 +45,26 @@
 .details-detail {
   display: flex;
   justify-content: space-between;
+  margin: 5px 0;
+}
+
+@media only screen and (max-width: 650px) {
+  .back-btn {
+    margin: 15px auto;
+    width: 20%;
+  }
+
+  .details-img {
+    width: 70%;
+  }
+
+  .details-overview {
+    width: 90%;
+    align-self: start;
+  }
+
+  /* .details-detail {
+    flex-direction: column;
+    margin: 10px 0;
+  } */
 }
