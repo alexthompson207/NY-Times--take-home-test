@@ -1,0 +1,45 @@
+.filter-select {
+  position: relative;
+  font-size: 16px;
+  width: 150px;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .5em;
+  line-height: 1.3;
+  padding: 5px;
+}
+
+label {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.filter-select .select {
+  position: relative;
+  display: block;
+}
+
+
+.filter-select .select:after {
+  position: relative;
+  display: block;
+}
+
+.filter-select:hover {
+  cursor: pointer;
+}
+
+.filter-select:active {
+  background-color: blue;
+}
+
+.fitler-select:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222; 
+  outline: none;
+}

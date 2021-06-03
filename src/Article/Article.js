@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Article = ({ id, title, author, published, photo, alt, section }) => {
 
   return (
-    <Link to={`/${title}`} className='article-card' id={id}>
+    <Link to={`/${alt}`} className='article-card' id={id}>
       <img className='article-img' alt={alt} src={photo} />
       <div className='article-text-box'>
         <h2 className='article-title'>{title}</h2>

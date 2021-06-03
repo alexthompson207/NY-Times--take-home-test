@@ -2,9 +2,18 @@ import React from 'react';
 import Article from '../Article/Article';
 import './NewsView.css';
 
-const NewsView = ({ stories }) => {
+const NewsView = ({ stories, filteredStories, search }) => {
 
-  const storyCards = stories.map(story => {
+  let storiesToDisplay = stories;
+
+  if (search && filteredStories.length) {
+    storiesToDisplay = filteredStories
+  }
+  else if (!filteredStories.length && search) {
+    return (<h1>No articles match that section, please try again</h1>)
+  }
+
+  const storyCards = storiesToDisplay.map(story => {
     return (
       <Article
         key={story.id}
@@ -20,7 +29,8 @@ const NewsView = ({ stories }) => {
 
   return (
     <section className='news-view'>
-      <h1>All Top Articles: {storyCards.length}</h1>
+      <h1>Articles: {storyCards.length}</h1>
+      {!stories.length && <h2>Loading...</h2>}
       {storyCards}
     </section>
   )

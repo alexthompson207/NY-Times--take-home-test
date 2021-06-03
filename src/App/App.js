@@ -6,11 +6,14 @@ import { cleanStoriesData } from '../utilities';
 import { Route, Switch } from 'react-router-dom';
 import ArticleDetail from '../ArticleDetail/ArticleDetail';
 import Header from '../Header/Header';
+import Filter from '../Filter/Filter';
 
 const App = () => {
 
   const [stories, setStories] = useState([]);
   const [error, setError] = useState('');
+  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [search, setSearch] = useState(false)
 
   useEffect(() => {
     getAllStories()
@@ -29,6 +32,22 @@ const App = () => {
 
   }, []);
 
+  const searchArticles = (event) => {
+    const search = event.target.value;
+    if (search === 'all') {
+      setFilteredArticles(stories);
+      setSearch(true);
+    } else {
+      const filteredSearch = stories.filter(story => story.section === search);
+      setFilteredArticles(filteredSearch);
+      setSearch(true);
+    }
+  }
+
+  const resetFilter = () => {
+    setSearch(false);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -36,20 +55,20 @@ const App = () => {
         <Route exact path='/' render={() => {
           return (
             <>
-              <NewsView stories={stories} />
+              <Filter search={searchArticles} />
+              <NewsView stories={stories} filteredStories={filteredArticles} search={search} />
             </>
           )
         }}
         />
-        <Route exact path='/:title' render={({ match }) => {
+        <Route exact path='/:alt' render={({ match }) => {
           const currentStory = stories.find(story => {
-            console.log(story.id.toString())
-            return story.title === match.params.title
+            return story.photoAlt === match.params.alt
           });
-          console.log((match))
           return (
             <>
-              {currentStory && <ArticleDetail currentStory={currentStory} />}
+              {!currentStory && <h2>Loading...</h2>}
+              {currentStory && <ArticleDetail currentStory={currentStory} reset={resetFilter} />}
             </>
           )
         }}
