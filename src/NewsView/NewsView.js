@@ -2,7 +2,7 @@ import React from 'react';
 import Article from '../Article/Article';
 import './NewsView.css';
 
-const NewsView = ({ stories, filteredStories, search }) => {
+const NewsView = ({ stories, filteredStories, search, error }) => {
 
   let storiesToDisplay = stories;
 
@@ -31,8 +31,11 @@ const NewsView = ({ stories, filteredStories, search }) => {
   return (
 
     <section className='news-view'>
+
       <h1 className='news-results'>Articles: {storyCards.length}</h1>
+      {!stories.length && <h2>Loading...</h2>}
       {storyCards}
+
     </section>
   )
 }
