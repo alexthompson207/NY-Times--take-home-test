@@ -37,4 +37,24 @@
 .article-details {
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 700px) {
+  .article-card {
+    flex-direction: column;
+  }
+
+  .article-img {
+    width: 80%;
+    margin: auto;
+  }
+
+  .article-text-box {
+    width: 90%;
+    margin-top: 5px;
+    text-align: start;
+    padding: 0 15px;
+  }
+
 }
