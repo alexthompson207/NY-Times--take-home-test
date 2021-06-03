@@ -23,6 +23,7 @@ const NewsView = ({ stories, filteredStories, search }) => {
         photo={story.photo}
         alt={story.photoAlt}
         section={story.section}
+        id={story.id}
       />
     )
   })

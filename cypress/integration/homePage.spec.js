@@ -25,15 +25,15 @@ describe('Home View Features', () => {
   });
 
   it('should display an article title, image, and author', () => {
-    cy.get('.story-card').first().contains('Biden’s Climate Summit Sets Up a Bigger Test of American Power')
-    cy.get('.story-card').first().contains('By Somini Sengupta')
-    cy.get('.story-card').first().children('img').should('have.class', 'story-img')
+    cy.get('.article-card').first().contains('Biden’s Climate Summit Sets Up a Bigger Test of American Power')
+    cy.get('.article-card').first().contains('By Somini Sengupta')
+    cy.get('.article-card').first().children('img').should('have.class', 'article-img')
   });
 
   it('should display a different article title, image, and author', () => {
-    cy.get('.story-card').eq(1).contains('The U.S. Has a New Climate Goal. How Does It Stack Up Globally?')
-    cy.get('.story-card').eq(1).contains('By Brad Plumer and Nadja Popovich')
-    cy.get('.story-card').eq(1).children('img').should('have.class', 'story-img')
+    cy.get('.article-card').eq(1).contains('The U.S. Has a New Climate Goal. How Does It Stack Up Globally?')
+    cy.get('.article-card').eq(1).contains('By Brad Plumer and Nadja Popovich')
+    cy.get('.article-card').eq(1).children('img').should('have.class', 'article-img')
   });
 
   // it('should display to the user the number of articles of the page', () => {
